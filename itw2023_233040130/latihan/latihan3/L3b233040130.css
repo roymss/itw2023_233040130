@@ -1,0 +1,31 @@
+
+body {
+    background: aqua;
+    font-family: Georgia;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 60px;
+    color: darkblue;
+    text-align: center;
+}
+
+h3 a{
+    text-decoration: none;
+    color: white;
+}
+
+h4 {
+    text-align: right;
+    font-style: italic;
+}
+
+.teks1 {
+    text-align: center;
+    color: orange
+}
+
+.teks2 {
+    text-align: right;
+}

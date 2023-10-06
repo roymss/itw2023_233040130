@@ -1,0 +1,46 @@
+
+body {
+    background: aqua;
+    font-family: Georgia;
+}
+
+h1 {
+    font-family: cursive;
+    font-size: 60px;
+    color: darkblue;
+    text-align: center;
+}
+
+h3 a{
+    color: white;
+}
+
+h3 a:hover {
+    color: red;
+    text-decoration: none;
+}
+
+h4 {
+    text-align: right;
+    font-style: italic;
+}
+
+.teks1 {
+    text-align: center;
+    color: orange
+}
+
+.teks2 {
+    text-align: right;
+
+}
+
+.teks2 a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.teks2 a:hover {
+    background: blue;
+    color: white;
+}
