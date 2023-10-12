@@ -15,7 +15,7 @@
             <tr>
                 <td>Password</td>
                 <td>:</td>
-                <td><input type="text"></td>
+                <td><input type="Password"></td>
             </tr>
             <tr>
                 <td>Fullname</td>
@@ -32,7 +32,12 @@
                 <td>:</td>
                 <td>
                     <select>
-                        <option selected>--Pilih Agama--</option>
+                        <option name="agama" selected>--Pilih Agama--</option>
+                        <option value="Islam">Islam</option>
+                        <option value="Kristen">Kristen</option>
+                        <option value="Hindu">Hindu</option>
+                        <option value="Buddha">Buddha</option>
+                        <option value="Katolik">Katolik</option>
                     </select>
                 </td>
                 <tr>
@@ -54,9 +59,11 @@
                     <td>:</td>
                     <td><textarea rows="6" cols="50"></textarea></td>
                 </tr>
-                
                 <tr>
-            </tr>
+                    <td align="right" colspan="5">
+                        <input type="submit" name="Input" value="Input"/>
+                    </td>
+                </tr>
         </table>
     </body>
 </html>
