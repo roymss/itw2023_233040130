@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font: 16px/28px arial, sans-serif;
+    background-color: #eaeaea;
+    background-image: url(moroccan-flower.png);
+    color: #333;
+}
+
+.container {
+    width: 800px;
+    margin: auto;
+    background-color: #eaeaea;
+}
+
+.header {
+    padding: 20px;
+}
+
+.header .judul {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.header ul li {
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.header a {
+    text-decoration: none;
+    color: #f4ce14;
+    padding: 3px;
+}
+
+.header a:hover {
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+.hero {
+    height: 280px;
+    background-image: url(anak-main-hp.jpg);
+    background-size: cover;
+    background-position: 0 -40px ;
+    border-top: 5px solid #333;
+    border-bottom: 5px solid #f4ce14;
+}
+
+.content {
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.content .penulis {
+    font-size: 11px;
+    margin-top: -5px;
+}
+
+.content .penulis a {
+    text-decoration: none;
+    color: #f4ce14;
+}
+.content p {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.dongeng {
+    text-align: center;
+}
+
+.dongeng p {
+    margin-top: -10px;
+    font-size: 10px;
+}
+
+.kecanduan {
+    text-align: center;
+}
+
+.kecanduan p {
+    margin-top: -10px;
+    font-size: 10px;
+}
+
+.footer {
+    background-color: #333;
+    padding: 20px;
+}
+
+.footer .copy {
+    color: #eaeaea;;
+    text-align: center;
+    font-size: 12px;
+}
