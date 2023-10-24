@@ -1,0 +1,363 @@
+/* ------------My Fonts---------- */
+
+@font-face {
+    font-family: 'black_jackregular';
+    src: url(../Fonts/blackjack-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'reeyregular';
+    src: url(../Fonts/reey-regular-webfont.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ------------Basic---------- */
+
+html {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'black_jackregular';
+}
+
+h1 {
+    font-family: 'reeyregular';
+    font-size: 30px;
+    width: fit-content;
+    margin: 5px auto;
+}
+
+
+/* ------------Content-Container---------- */
+
+input {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.content {
+    background: #fff;
+    width: 90%;
+    margin: 40px auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+h3 {
+    height: 100%;
+    background: #ccc;
+    color: black;
+    line-height: 60px;
+    padding: 0 50px;
+}
+
+label {
+    display: inline-block;
+    height: 100%;
+    padding: 0 5px;
+    margin: 0 10px;
+    line-height: 60px;
+    cursor: pointer;
+    color: #bbb;
+    transition: .5s;
+}
+
+label:hover {
+    color: black;
+}
+
+
+/* -------------Gallery------------ */
+
+
+.photo-gallery {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+    overflow: hidden;
+}
+
+.photos {
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    height: 150px;
+}
+
+.photos img {
+    transform: scale(1);
+    transition: .8s;
+}
+
+
+.title {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    color: #fff;
+    position: absolute;
+    top: 170px;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.title span {
+    font-weight: bold;
+}
+
+
+
+.photos:hover .title {
+    top: 0;
+}
+
+.photos:hover img {
+    transform: scale(1.2);
+}
+
+
+/* -------------Overlay------------ */
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+    z-index: 9999;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.overlay:target {
+    width: auto;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    padding: 200px;
+}
+
+.overlay .close {
+    position: absolute;
+    font-size: 30px;
+    color: #eee;
+    text-decoration: none;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 5px #000;
+    border-radius: 50%;
+    padding: 0 15px;
+    background: black;
+    left: 50%;
+    top: 70%;
+    opacity: 0;
+}
+
+.overlay:target img {
+    animation: Dash 1s;
+}
+
+.overlay:target .close {
+    animation: closePopup .5s .5s forwards;
+}
+
+.overlay .close:hover {
+    background: orangered;
+    border: 1px solid orangered;
+}
+
+.overlay:target .next,
+.overlay:target .prev {
+    animation: Dash .5s .5s forwards;
+}
+
+
+/* -------------Navigation------------ */
+
+
+.next {
+    width: 77px;
+    height: 77px;
+    background-image: url(../Img/next.png);
+    position: absolute;
+    top: 40%;
+    right: 0;
+    opacity: 0;
+}
+
+.prev {
+    width: 77px;
+    height: 77px;
+    background-image: url(../Img/prev.png);
+    position: absolute;
+    top: 40%;
+    left: 0;
+    opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+/* -------------Animation------------ */
+
+@keyframes Dash {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes closePopup {
+    0% {
+        opacity: 0;
+        margin-bottom: -20px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-bottom: 0;
+    }
+}
+
+
+
+/* -------------Checked------------ */
+
+
+#all-photos:checked ~ .container .photo-gallery .photos {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: .5s;
+}
+
+#pride:checked ~ .container .photo-gallery .pride {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+#pride:checked ~ .container .photo-gallery .greed-gluttony,
+#pride:checked ~ .container .photo-gallery .envy,
+#pride:checked ~ .container .photo-gallery .wrath,
+#pride:checked ~ .container .photo-gallery .lust,
+#pride:checked ~ .container .photo-gallery .sloth {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+#greed-gluttony:checked ~ .container .photo-gallery .greed-gluttony {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+#greed-gluttony:checked ~ .container .photo-gallery .pride,
+#greed-gluttony:checked ~ .container .photo-gallery .envy,
+#greed-gluttony:checked ~ .container .photo-gallery .wrath,
+#greed-gluttony:checked ~ .container .photo-gallery .lust,
+#greed-gluttony:checked ~ .container .photo-gallery .sloth {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+#envy:checked ~ .container .photo-gallery .envy {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+#envy:checked ~ .container .photo-gallery .pride,
+#envy:checked ~ .container .photo-gallery .greed-gluttony,
+#envy:checked ~ .container .photo-gallery .wrath,
+#envy:checked ~ .container .photo-gallery .lust,
+#envy:checked ~ .container .photo-gallery .sloth {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+#wrath:checked ~ .container .photo-gallery .wrath {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+#wrath:checked ~ .container .photo-gallery .pride,
+#wrath:checked ~ .container .photo-gallery .greed-gluttony,
+#wrath:checked ~ .container .photo-gallery .envy,
+#wrath:checked ~ .container .photo-gallery .lust,
+#wrath:checked ~ .container .photo-gallery .sloth {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+
+#lust:checked ~ .container .photo-gallery .lust {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+#lust:checked ~ .container .photo-gallery .pride,
+#lust:checked ~ .container .photo-gallery .greed-gluttony,
+#lust:checked ~ .container .photo-gallery .envy,
+#lust:checked ~ .container .photo-gallery .wrath,
+#lust:checked ~ .container .photo-gallery .sloth {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
+
+#sloth:checked ~ .container .photo-gallery .sloth {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+
+#sloth:checked ~ .container .photo-gallery .pride,
+#sloth:checked ~ .container .photo-gallery .greed-gluttony,
+#sloth:checked ~ .container .photo-gallery .envy,
+#sloth:checked ~ .container .photo-gallery .wrath,
+#sloth:checked ~ .container .photo-gallery .lust {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+}
+
