@@ -158,7 +158,9 @@ label:hover {
     height: auto;
     bottom: 0;
     right: 0;
-    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .overlay .close {
@@ -172,7 +174,7 @@ label:hover {
     padding: 0 15px;
     background: black;
     left: 50%;
-    top: 70%;
+    bottom: 3%;
     opacity: 0;
 }
 
